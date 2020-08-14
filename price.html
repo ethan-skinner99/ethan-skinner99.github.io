@@ -1,0 +1,206 @@
+<!-- to do list
+Center Rocket richard and jean in cards  
+Add nav bar to the footer ( improve footer)
+
+-->
+
+<html>
+<title>Goals - Pricing</title> <!-- title, displayed in tab-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-blue.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+	<div class="w3-bar w3-white w3-wide w3-padding w3-card">
+	<a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-white" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	  <a href=".\main.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Goals</a>
+	  <!-- Float links to the right. Hide them on small screens -->
+	  <div class="w3-right w3-hide-small">
+		<a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
+		<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals</a>
+
+		<div class="w3-dropdown-hover">		
+			<a class="w3-button" style="border-left: 2px solid black;">  Products <i class="fa fa-caret-down"> </i> </a>     
+			<div class="w3-dropdown-content w3-bar-block">
+				<a href=".\rocket.html" class="w3-bar-item w3-button ">The Rocket Richard</a>
+				<a href=".\jean_beliveau.html" class="w3-bar-item w3-button ">Jean Beliveau</a>
+			</div>	
+		</div>	
+		<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
+		<a href=".\shipping.html" class="w3-bar-item w3-button  ">Shipping</a>
+		<a href=".\premium.html" class="w3-bar-item w3-button ">Premium Incentive</a>
+		<a href="#about" class=" w3-button w3-bar-item " >Updates</a>
+
+	  </div>
+	</div>
+  </div>
+
+
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-top">
+	<a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
+	<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals Inc</a>
+	<a href=".\rocket.html" class="w3-bar-item w3-button w3-padding-large ">The Rocket Richard</a>
+	<a href=".\jean_beliveau.html" class="w3-bar-item w3-button w3-padding-large ">Jean Beliveau</a>
+	<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
+	<a href="#Shipping" class="w3-bar-item w3-button ">Shipping</a>
+	<a href="#premmium Incentive" class="w3-bar-item w3-button">Premium Incentive</a>
+	<a href="#about" class=" w3-button w3-bar-item" >Updates</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+<!-- INformation Section -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+	<div class="w3-container">
+	  <div class="w3-twothird">
+		<h1>Pricing and Ordering</h1>
+		<h5 class="w3-padding-32">
+			In this inaugural issue of PSA/DNA prints, there are a total of 78 prints available. <br>
+			All purchases are done through ebay.
+		</h5>
+	  </div>
+  <!-- .w3-col.m5 is for spacing-->
+		 <div class=".w3-col.m5 w3-center w3-padding-64">
+		<img src=".\pics\psa_card_removed.jpg" style="width:250px;height:280px;">
+	  </div>
+	</div>
+  </div>
+
+  
+<!-- Card 1 -->
+
+<!-- <div class="row">
+	<div class="column"> 
+<div class="w3-row-padding w3-center w3-margin-top"> -->
+
+	<div class="container w3-padding-16">
+
+		
+	<div class="w3-card" style="max-width:30%;">
+		<h3 class="w3-center"> The Rocket Richard </h3>   
+		<div class="container-fade">
+			<img src=".\pics\rocket.jpg" alt="Rocket" class="image-fade" style="width:100%">
+			<div class="middle-fade">
+			  <a href=".\buying_form.html" class="text"> Buy Now </a>
+			</div>
+		  </div>	
+		
+			   <h1 class="w3-center"> 899 USD</h1> 
+			   <p class="w3-center"> 50 Prints available with PSA/DNA</p>
+			  
+		
+	</div>
+	
+	
+	<!-- Card 2 Jean Beliveau-->
+	<!--
+	<div class="column">
+	<div class="w3-row-padding w3-center w3-margin-top"> -->
+	
+		
+	<div class="w3-card" style="max-width: 30%;">
+		  <h3 class="w3-center"> Jean Beliveau </h3>
+		  <div class="container-fade">
+			<img src=".\pics\jean_beliveau.jpg" alt="Jean Beliveau" class="image-fade" style="width:100%">
+			<div class="middle-fade">
+			  <a href=".\buying_form.html"  class="text"> Buy Now </a>
+			</div>
+		  </div>
+		
+			   <h1 class="w3-center"> 899 USD</h1> 
+			   <p class="w3-center"> 50 Prints available with PSA/DNA</p>
+		
+		
+	</div>
+	<!-- Card 3 Jean Beliveau Payoff-->
+	<!--
+	<div class="column">
+	<div class="w3-row-padding w3-center w3-margin-top"> -->
+	
+		
+		<div class="w3-card" style="max-width: 30%;">
+			<h3 class="w3-center"> Jean Beliveau - Playoff </h3>
+			
+			<div class="container-fade">
+				<img src=".\pics\jean_beliveau.jpg" alt="Rocket" class="image-fade" style="width:100%">
+				<div class="middle-fade">
+				  <a href=".\buying_form.html"  class="text"> Buy Now </a>
+				</div>
+			  </div>
+			
+				   <h1 class="w3-center"> 899 USD</h1> 
+				   <p class="w3-center"> 50 Prints available with PSA/DNA</p>
+	  </div>
+	
+	</div>
+	
+<br>
+
+<!-- INformation Section for ordering -->
+
+<div class="w3-row-padding w3-padding-64 w3-container">
+	<div class="w3-content">
+	  <div class="w3-twothird">
+		<h1 class="w3-border-bottom w3-border-light-grey">How to order</h1>
+		<hp class="w3-padding-32">
+			<ol>
+				<li>Choose the Lithograph you would like to order. </li>
+				<li>Choose the Number of the lithograph you would like. ( from under the picture)</li>
+				<li>Click on the Ebay icon (This will take you to my ebay site. This allows you to have the Ebay purchase guarantee??)ll</li>
+				<li>Just fill in your lithograph and number chosen, adding the price.</li>
+				<li>Please read the shipping procedures under the shipping tab.
+					Note: if you are ordering two prints, 1 Richard and 1 Beliveau, please read the information under the Shipping tab.</li>
+				<li>Place your order</li>
+			  </ol>
+		</hp>
+	  </div>
+ 
+	</div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+	
+	<div class = "w3-container">
+		<div class="w3-bar w3-black w3-wide w3-padding-16 w3-card">
+			
+			  <div class="w3-left w3-hide-small">
+				<a href="#about" class="w3-bar-item-foot w3-button ">Pricing</a>  
+				<a href="#about" class="w3-bar-item-foot w3-button ">Return Policy</a>
+				<a href="#about" class="w3-bar-item-foot w3-button ">Contact Us</a>
+	
+		</div>
+	</div>	
+
+
+<p >  <br> &copy; Copyright 2020 Commemorative Goals </p>
+
+</footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    
+    </script>
+
+</body>
+</html>

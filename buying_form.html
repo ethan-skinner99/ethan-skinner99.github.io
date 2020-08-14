@@ -1,0 +1,137 @@
+<!-- to do list
+Center Rocket richard and jean in cards  
+Add nav bar to the footer ( improve footer)
+
+-->
+
+<html>
+<title>Goals - Shipping</title> <!-- title, displayed in tab-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-blue.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+	<div class="w3-bar w3-white w3-wide w3-padding w3-card">
+	<a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-white" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	  <a href=".\main.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Goals</a>
+	  <!-- Float links to the right. Hide them on small screens -->
+	  <div class="w3-right w3-hide-small">
+		<a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
+		<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals</a>
+
+		<div class="w3-dropdown-hover">		
+			<a class="w3-button" style="border-left: 2px solid black;">  Products <i class="fa fa-caret-down"> </i> </a>     
+			<div class="w3-dropdown-content w3-bar-block">
+				<a href=".\rocket.html" class="w3-bar-item w3-button ">The Rocket Richard</a>
+				<a href=".\jean_beliveau.html" class="w3-bar-item w3-button ">Jean Beliveau</a>
+			</div>	
+		</div>	
+		<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
+		<a href=".\shipping.html" class="w3-bar-item w3-button  ">Shipping</a>
+		<a href="#premmium Incentive" class="w3-bar-item w3-button ">Premium Incentive</a>
+		<a href="#about" class=" w3-button w3-bar-item " >Updates</a>
+
+	  </div>
+	</div>
+  </div>
+
+
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-top">
+	<a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
+	<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals Inc</a>
+	<a href=".\rocket.html" class="w3-bar-item w3-button w3-padding-large ">The Rocket Richard</a>
+	<a href=".\jean_beliveau.html" class="w3-bar-item w3-button w3-padding-large ">Jean Beliveau</a>
+	<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
+	<a href="#Shipping" class="w3-bar-item w3-button ">Shipping</a>
+	<a href="#premmium Incentive" class="w3-bar-item w3-button">Premium Incentive</a>
+	<a href="#about" class=" w3-button w3-bar-item" >Updates</a>
+</div>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+	<div style="margin-top: 10%;">
+	<form method="POST" action="process.asp" name="form1">
+
+		<label for="fname">First Name</label>
+		<input type="text" id="fname" name="firstname" placeholder="Your name..">
+	
+		<label for="lname">Last Name</label>
+		<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+		<label for="lname">Address</label>
+		<input type="text" id="lname" name="Address" placeholder="Your last name..">
+
+		<label for="lname">Postal Code</label>
+		<input type="text" id="lname" name="postal" placeholder="Your last name..">
+
+		<label for="lname">City</label>
+		<input type="text" id="lname" name="city" placeholder="Your last name..">
+	
+		<label for="country">Country</label>
+		<select id="country" name="country">
+		  <option value="australia">International</option>
+		  <option value="canada">Canada</option>
+		  <option value="usa">USA</option>
+		</select>
+
+		<label for="country">Print Selection</label>
+		<select id="country" name="country">
+		  <option value="australia">Maurice Richard Regular Season</option>
+		  <option value="canada">Jean Beliveau Regular Season</option>
+		  <option value="usa">Jean Beliveau Playoff</option>
+		</select>
+
+
+	
+		<input type="submit" value="Submit">
+	
+	  </form>
+
+	</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+	
+	<div class = "w3-container">
+		<div class="w3-bar w3-black w3-wide w3-padding-16 w3-card">
+			
+			  <div class="w3-left w3-hide-small">
+				<a href="#about" class="w3-bar-item-foot w3-button ">Pricing</a>  
+				<a href="#about" class="w3-bar-item-foot w3-button ">Return Policy</a>
+				<a href="#about" class="w3-bar-item-foot w3-button ">Contact Us</a>
+	
+		</div>
+	</div>	
+
+
+<p >  <br> &copy; Copyright 2020 Commemorative Goals </p>
+
+</footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+    // Used to toggle the menu on small screens when clicking on the menu button
+    function myFunction() {
+      var x = document.getElementById("navDemo");
+      if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+      } else { 
+        x.className = x.className.replace(" w3-show", "");
+      }
+    }
+    
+    </script>
+
+</body>
+</html>

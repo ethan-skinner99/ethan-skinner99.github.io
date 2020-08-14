@@ -1,0 +1,250 @@
+<html>
+<title>Goals Inc</title> <!-- title, displayed in tab-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="w3.css">
+<link rel="stylesheet" href="w3-theme-blue.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top" style="z-index: 2;">
+	<div class="w3-bar w3-white w3-wide w3-padding w3-card">
+	 <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-white" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+	  <a href=".\main.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Goals</a>
+	  <!-- Float links to the right. Hide them on small screens -->
+	  <div class="w3-right w3-hide-small">
+		<a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
+		<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals</a>
+
+		<div class="w3-dropdown-hover">		
+			<a class="w3-button" style="border-left: 2px solid black;">  Products <i class="fa fa-caret-down"> </i> </a>     
+			<div class="w3-dropdown-content w3-bar-block">
+				<a href=".\rocket.html" class="w3-bar-item w3-button ">The Rocket Richard</a>
+				<a href=".\jean_beliveau.html" class="w3-bar-item w3-button ">Jean Beliveau</a>
+			</div>	
+		</div>	
+		<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
+		<a href=".\shipping.html" class="w3-bar-item w3-button  ">Shipping</a>
+		<a href=".\premium.html" class="w3-bar-item w3-button ">Premium Incentive</a>
+		<a href="#about" class=" w3-button w3-bar-item " >Updates</a>
+
+	  </div>
+	</div>
+</div>
+
+
+  <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
+<div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-top">
+	<a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
+	<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals Inc</a>
+	<a href=".\rocket.html" class="w3-bar-item w3-button w3-padding-large ">The Rocket Richard</a>
+	<a href=".\jean_beliveau.html" class="w3-bar-item w3-button w3-padding-large ">Jean Beliveau</a>
+	<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
+	<a href="#Shipping" class="w3-bar-item w3-button ">Shipping</a>
+	<a href="#premmium Incentive" class="w3-bar-item w3-button">Premium Incentive</a>
+	<a href="#about" class=" w3-button w3-bar-item" >Updates</a>
+</div>
+
+<div class='w3-container'>
+  <h1 class="w3-text-indigo w3-center w3-padding-64" style="margin-top: 10%;"><b>Maurice</b> <span class="w3-xxlarge w3-text-black">"The Rocket"</span> <b>Richard</b> </h1>  
+<div class="w3-content " style="height:1400px; max-width:1015px;position:relative;">
+  <img class="w3-content border " src=".\pics\rocket.jpg" usemap="#Map" style="position:absolute; width: 1000px;"/>
+  <div class=""> 
+    <map name="Map" onmouseover="hovIn()" onmouseout="hovOut()" class="debug">
+      <div id="CUST_1">
+        <div id="myDiv">
+
+        <div onclick="showDescription('blurb')" id="num_cust1">
+            <div id="blurb">Maurice “The Rocket” Richard
+              <ul>
+                  <li>Inducted into Hockey Hall of Fame, 1961 (one year after retirement)</li>
+                  <li>8  Stanley Cups (5 consecutive)</li>
+                  <li>14 All-Star selections</li>
+                  <li>544 Career Goals and 82 Playoff Goals</li>
+              </ul>
+            </div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb1')" id="num_cust2">
+            <div id="blurb1">Each fine print is produced on museum quality acid free paper, 
+              ensuring the highest standard of original art reproduction. 
+              This guarantees each limited edition lithograph will stand the test of time and 
+              increased value for the investor.</div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb2')" id="num_cust3">
+          <div id="blurb2">
+            Maurice “The Rocket” Richard
+            <ul>
+              <li>First player to score 50 goals in a season  </li>
+              <li>First player to reach 500 goals</li>
+              <li>“Rocket Richard Trophy” named after him in 1999 ( NHL season leader in goals)</li>
+            </ul>
+            <img src=".\pics\rocket_trophy1.png" class="w3-center" height="150px" width="110px">
+            </div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb3')" id="num_cust4">
+          <div id="blurb3">Each Lithograph represents One of the 626 goals scored by “The Rocket”</div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb4')" id="num_cust5">
+          <div id="blurb4">“PSA” Authentication and Guarantee of Signature 
+            (“PSA” DNA is the leader in signature authentication)
+          </div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb5')" id="num_cust6">
+          <div id="blurb5">Signed and Numbered by Richard Carter ( the “artist”)</div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb6')" id="num_cust7">
+          <div id="blurb6">signed by Maurice Richard and drop by his signature</div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+        <div onclick="showDescription('blurb7')" id="num_cust8">
+          <div id="blurb7">Actual size 18 x 30 inches</div>
+        </div> <!-- Ref CSS for loaction and style-->
+
+          <area shape="rect" coords="0,0,1580,1460" id=""/> <!-- total picture area hover-->
+          
+        </div>
+      </div>
+    </map>
+  </div>
+  <!-- Vertical arrow-->
+<svg height="550" width="20">
+	<defs>
+		<marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6"
+			orient="auto">
+			<path d="M2,2 L2,11 L10,6 L2,2" style="fill: #000000;" />
+		</marker>
+	</defs>
+	<text x="0" y="320" style="writing-mode: tb;"> 26 Inches</text>
+	<line x1="0" y1="0" x2="0" y2="300" class="arrow" />
+	<defs>
+		<marker id="markerArrow" markerWidth="13" markerHeight="13" refX="2" refY="6"
+			orient="auto">
+			<path d="M2,2 L2,11 L10,6 L2,2" style="fill: #000000;" />
+		</marker>
+	</defs>
+	<line x1="0" y1="700" x2="0" y2="400" class="arrow" />
+	</svg>
+</div>
+
+  
+
+</div>
+    
+
+<!-- INformation Section -->
+<div class="w3-container" style="margin-top: 10%;">
+  <div class="w3-row-padding w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+      <h1>Maurice "The Rocket" Richard</h1>
+      <h5 class="w3-padding-32">
+        Edition Size: 544 Signed & Numbered. <br>
+        82 Playoff Goals-signed and numbered <br>
+        626 Total  Goals- one print for each NHL  goal scored <br>
+        63 Artist Proofs-signed and numbered <br>
+
+
+        An outstanding lithograph, showcasing the “The Rocket” in three images. The NHL’s first 50 goal scorer.
+
+      </h5>
+      </div>
+    <!-- .w3-col.m5 is for spacing-->
+      <div class=".w3-col.m5 w3-center w3-padding-64" >
+        <img src=".\pics\rocket_signing2.jpeg" alt="Rocket sgining" style="width:300px;height:200px;">
+     
+      </div>
+    </div>
+    </div>
+</div>  
+
+  
+<!-- Footer -->
+<footer class="w3-container w3-black w3-padding-16">
+	
+  <div class = "w3-container">
+    <div class="w3-bar w3-black w3-wide w3-padding-16 w3-card">
+      
+        <div class="w3-left w3-hide-small">
+        <a href="#about" class="w3-bar-item-foot w3-button ">Pricing</a>  
+        <a href="#about" class="w3-bar-item-foot w3-button ">Return Policy</a>
+        <a href="#about" class="w3-bar-item-foot w3-button ">Contact Us</a>
+  
+    </div>
+  </div>
+
+<p >  <br> &copy; Copyright 2020 Commemorative Goals </p>
+
+</footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+
+	// JS section 
+// Side navigation
+
+
+// Hover over picture section 
+function hovIn() {
+  document.getElementById("myDiv").style.display = "inline-block";
+}
+function hovOut() {
+  document.getElementById("myDiv").style.display = "none";
+  document.getElementById("blurb").style.display = "none";
+  document.getElementById("blurb1").style.display = "none";
+  document.getElementById("blurb2").style.display = "none";
+  document.getElementById("blurb3").style.display = "none";
+  document.getElementById("blurb4").style.display = "none";
+  document.getElementById("blurb5").style.display = "none";
+  document.getElementById("blurb6").style.display = "none";
+  document.getElementById("blurb7").style.display = "none";
+
+}
+$('map').hover(hovIn, hovOut);
+
+
+function showDescription(textBox) {
+    var value;
+    value = 0;
+    if (value == 0) {
+      if      (textBox == "blurb" ) {document.getElementById("blurb").style.display  = "inline-block";}
+      else if (textBox == "blurb1") {document.getElementById("blurb1").style.display = "inline-block";}
+      else if (textBox == "blurb2") {document.getElementById("blurb2").style.display = "inline-block";}
+      else if (textBox == "blurb3") {document.getElementById("blurb3").style.display = "inline-block";}
+      else if (textBox == "blurb4") {document.getElementById("blurb4").style.display = "inline-block";}
+      else if (textBox == "blurb5") {document.getElementById("blurb5").style.display = "inline-block";}
+      else if (textBox == "blurb6") {document.getElementById("blurb6").style.display = "inline-block";}
+      else if (textBox == "blurb7") {document.getElementById("blurb7").style.display = "inline-block";}
+      else if (textBox == "blurb8") {document.getElementById("blurb8").style.display = "inline-block";}
+    }
+  }
+
+
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+
+</script>
+
+
+</body>
+</html>
+
+
