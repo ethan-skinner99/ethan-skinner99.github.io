@@ -1,11 +1,69 @@
-<!-- to do list
-Center Rocket richard and jean in cards  
-Add nav bar to the footer ( improve footer)
+<?php
 
--->
+if($_POST["submit"]) {
+
+    $recipient="commemorative.goals@gmail.com";
+    $subject="Order for Print";
+    $firstname=$_POST["firstname"];
+    $lastname=$_POST["lastname"];
+    $email=$_POST["email"];
+    $phone=$_POST["phone"];
+    $country=$_POST["country"];
+    $state=$_POST["state"];
+    $city=$_POST["city"];
+    $address=$_POST["address"];
+    $postal=$_POST["postal"];
+    $print=$_POST["print"];
+    $number=$_POST["number"];
+
+    $mailBody="$firstname\nFirst_Name: $lastname\nLast_name: $email\nEmail: $phone\nPhone: $country\ncountry: $state\nstate: $city\ncity $address\naddress: 
+    $postal\npostal: $print\nprint: $number\nnumber:";
+
+    mail($recipient, $subject, $mailBody, "From: $firstname <$email>");
+
+    $thankYou="<p>Thank you! Your Number Selection has been submitted</p>";
+
+  
+    function IsInjected($str)
+    {
+        $injections = array('(\n+)',
+               '(\r+)',
+               '(\t+)',
+               '(%0A+)',
+               '(%0D+)',
+               '(%08+)',
+               '(%09+)'
+               );
+                   
+        $inject = join('|', $injections);
+        $inject = "/$inject/i";
+        
+        if(preg_match($inject,$str))
+        {
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+    }
+    
+    if(IsInjected($visitor_email))
+    {
+        echo "Bad email value!";
+        exit;
+    }
+  
+
+
+}
+
+?>
+
+<!DOCTYPE html>
 
 <html>
-<title>Goals - Shipping</title> <!-- title, displayed in tab-->
+<title>Goals - Form</title> <!-- title, displayed in tab-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -68,17 +126,30 @@ Add nav bar to the footer ( improve footer)
 
 <!-- Page content -->
 <div class="w3-content w3-padding" style="max-width:1564px">
-	<h1 style="margin-top: 10%;">Fill out the form only if you are buying a print through Ebay</h1>
+    <div style="margin-top: 10%;">
+    <h1>Number Selection Form</h1>
+    <h4>Fill out the form when you are ready to order</h4>
+    </div>
+    
 
-	<div style="margin-top: 10%;">
-	<form method="POST" action="process.asp" name="form1">
+    <div style="margin-top: 10%;">
+    
+
+	<form method="post" action="contact.php">
 
 		<label for="fname">First Name</label>
 		<input type="text" id="fname" name="firstname" placeholder="Your name..">
 	
 		<label for="lname">Last Name</label>
-		<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="email" placeholder="Your email">
 
+        <label for="lname">Phone Number</label>
+        <input type="text" id="lname" name="phone" placeholder="Your Phone Number">
+
+        
 		<label for="country">Country</label>
 		<select id="country" name="country">
 			<option value="Canada">Canada</option>
@@ -332,27 +403,27 @@ Add nav bar to the footer ( improve footer)
 		 </select>
 
 		 <label for="lname">State/Provanice</label>
-		 <input type="text" id="lname" name="city" placeholder="Your last name..">
+		 <input type="text" id="lname" name="state" placeholder="Your last name..">
  
 		<label for="lname">City</label>
 		<input type="text" id="lname" name="city" placeholder="Your last name..">
 
 		<label for="lname">Address</label>
-		<input type="text" id="lname" name="Address" placeholder="Your last name..">
+		<input type="text" id="lname" name="address" placeholder="Your last name..">
 
 		<label for="lname">Postal Code</label>
 		<input type="text" id="lname" name="postal" placeholder="Your last name..">
 
 
 		<label for="country">Print Selection</label>
-		<select id="country" name="country">
+		<select id="country" name="print">
 		  <option value="richard_regular">Maurice Richard Regular Season</option>
 		  <option value="beliveau_regular">Jean Beliveau Regular Season</option>
 		  <option value="beliveau_payoff">Jean Beliveau Playoff</option>
 		</select>
 
 		<label for="number">Number Selection</label>
-		<select id="country" name="country">
+		<select id="country" name="number">
 		  <option value="richard_regular">404</option>
 		  <option value="beliveau_regular">405</option>
 		  <option value="beliveau_payoff">406</option>
