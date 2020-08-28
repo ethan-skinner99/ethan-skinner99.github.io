@@ -331,11 +331,11 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 
 /* Hover over picture section  */
 #num_cust1 {
-    padding: 10px;
+    padding: 6px;
     background-color:rgba(133, 133, 133, 0.7);
     position:absolute;
     z-index: 1;
-    font-size: 14px;
+    font-size: 12px;
     box-shadow: 0 0 2px 3px rgb(211, 210, 210);
     cursor: pointer;
     top:70px;
@@ -417,7 +417,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background-color:rgba(133, 133, 133, 0.7);
   position:absolute;
   z-index: 1;
-  font-size: 14px;
+  font-size: 12px;
   box-shadow: 0 0 2px 3px rgb(211, 210, 210);
   cursor: pointer;
   top:450px;
@@ -435,7 +435,7 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
   background: rgba(216, 209, 209, 0.685);
   width: 200px;
   height: 200px;
-  text-align: center;
+  text-align: left;
 }
 #blurb1 {
   display: none;
