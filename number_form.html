@@ -1,82 +1,5 @@
 <!DOCTYPE html>
 
-<style>
-.error {color: #FF0000;}
-</style>
-
-<?php
-  error_reporting(E_ALL);
-  ini_set('display_errors', 1);
-// define variables and set to empty values
-$firstname_err = $lastname_err = $email_err = $country_err=$state_err=$city_err=$address_err=
-$postal_err=$print_err=$number_err= $phone = "";$firstname = $lastname = $email = $country=
-$state=$city=$address=$postal=$print=$number= "";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
-    // First name error checking
-  if (empty($_POST["firstname"])) {
-    $firstname_err = "Name is required";
-  } else {
-    $firstname = test_input($_POST["firstname"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$firstname)) {
-        $firstname_err = "Only letters and white space allowed";
-    }
-  }
-  // Last name error checking 
-  if (empty($_POST["lastname"])) {
-    $lastname_err = "Name is required";
-  } else {
-    $lastname_err = test_input($_POST["lastname"]);
-    // check if name only contains letters and whitespace
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$lastname)) {
-      $lastname = "Only letters and white space allowed";
-    }
-  }
-  
-  if (empty($_POST["email"])) {
-    $emailErr = "Email is required";
-  } else {
-    $email = test_input($_POST["email"]);
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      $emailErr = "Invalid email format";
-    }
-  }
-    
-  if (empty($_POST["website"])) {
-    $website = "";
-  } else {
-    $website = test_input($_POST["website"]);
-    // check if URL address syntax is valid (this regular expression also allows dashes in the URL)
-    if (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",$website)) {
-      $websiteErr = "Invalid URL";
-    }
-  }
-
-  if (empty($_POST["comment"])) {
-    $comment = "";
-  } else {
-    $comment = test_input($_POST["comment"]);
-  }
-
-  if (empty($_POST["gender"])) {
-    $genderErr = "Gender is required";
-  } else {
-    $gender = test_input($_POST["gender"]);
-  }
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
-
-
 <html>
 <title>Goals - Form</title> <!-- title, displayed in tab-->
 <meta charset="UTF-8">
@@ -150,17 +73,13 @@ function test_input($data) {
     <div style="margin-top: 10%;">
     
 
-	<form method="POST" action="contact.php">
+	<form method="post" action="contact.php">
 
 		<label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" required placeholder="Your name.." value="<?php echo $firstname;?>">
-        <span class="error">* <?php echo $firstname_err;?></span>
-        <br>
+		<input type="text" id="fname" name="firstname" required placeholder="Your name..">
 	
 		<label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name.."value="<?php echo $firstname;?>">
-        <span class="error">* <?php echo $firstname_err;?></span>
-        <br>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
         
         <label for="lname">Email</label>
         <input type="text" id="lname" name="email" placeholder="Your email">
@@ -433,9 +352,17 @@ function test_input($data) {
 		<label for="lname">Postal Code</label>
 		<input type="text" id="lname" name="postal" placeholder="Your last name..">
 
-        <?php 
-         error_reporting(E_ALL);
-         ini_set('display_errors', 1);
+
+		<label for="country">Print Selection</label>
+		<select id="country" name="print">
+		  <option value="richard_regular">Maurice Richard Regular Season</option>
+		  <option value="beliveau_regular">Jean Beliveau Regular Season</option>
+		  <option value="beliveau_payoff">Jean Beliveau Playoff</option>
+		</select>
+
+        <?php
+        error_reporting(E_ALL);
+        ini_set('display_errors', 1);
          //connection to db
          $dbhost = "localhost:3306"; /*most of the time it's localhost*/
          $username = "root";
@@ -443,90 +370,50 @@ function test_input($data) {
          $dbname = "rocket_numbers";
          $connection = mysqli_connect($dbhost, $username, $password,$dbname); //It connects
          if (mysqli_connect_errno()) {
-             echo "Failed to connect to MySQL: " . mysqli_connect_error();
-             exit();
-         }
-  
-     
-         $query = mysqli_query($connection, "SELECT number FROM numbers where name = 'Maurice Richard Regular Season' "   );
+            echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            exit();
+          }
         
-
-         while($line = mysqli_fetch_array($query)){
-              $rocket['Maurice Richard Regular Season'][]=$line;              
+        
+        //choosing db
+        
+          $result = mysqli_query($connection, "SELECT * FROM testing");
+        
+          if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              echo "id: " . $row["key"]. " - Name: " . $row["name"]. "Address " . $row["address"]. "<br>";
             }
-         
-        $query2 = mysqli_query($connection, "SELECT number FROM numbers where name = 'Jean Beliveau Regular Season' "   );
-         
-         while($line = mysqli_fetch_array($query2)){
-                $rocket['Jean Beliveau Regular Season'][]=$line;              
-            }
-
-        $query3 = mysqli_query($connection, "SELECT number FROM numbers where name = 'Jean Beliveau Playoff' "   );
-         
-            while($line = mysqli_fetch_array($query3)){
-                   $rocket['Jean Beliveau Playoff'][]=$line;              
-               }
-
-            //echo '<pre>';
-            //print_r($rocket);
-            //echo '</pre>';
+          } else {
+            echo "0 results";
+          }
+          mysqli_close($connection);
 
 
-            function fixelement($e)
-            {
-                //build new element from old
-                $n=array();
-                $num_rows=sizeof($e);
-                for ($i=0;$i<$num_rows;$i++){
-                    $n[]=$e[$i]['number'];
-                }
-                
-                //return value will be placed into array
-                return $n;
-            }
+
+        <label for="number">Number Selection</label>
+        <select name="number">
             
-            $position = array_map("fixelement", $rocket);
-            //echo '<pre>';
-            //print_r($position);
-            //echo '</pre>';
+            <?php
+            while ($row = mysqli_fetch_array($result)) {
+                echo "<option value='" . $row['Europe'] . "'>" . $row['Europe'] . "</option>";
+            }
+            ?>
+            </select>  
 
-         mysqli_close($connection);
 
-         $sports_arr = array();
-         $sports_arr[] = "Maurice Richard Regular Season";
-         $sports_arr[] = "Jean Beliveau Regular Season";
-         $sports_arr[] = "Jean Beliveau Playoff";
-        ?>
 
-<label for="country">Print Selection</label>
-    <select id="s1" name ="print">
-        <?php foreach($sports_arr as $sa) { ?>
-        <option value="<?php echo $sa; ?>"><?php echo $sa; ?></option>
-        <?php } ?>
-    </select>
-        <select id="s2" name = "number">
-    </select>
 
-<script type="text/javascript">
-    var s1= document.getElementById("s1");
-    var s2 = document.getElementById("s2");
-    onchange(); //Change options after page load
-    s1.onchange = onchange; // change options when s1 is changed
+		<select id="country" name="number">
+		  <option value="404">404</option>
+		  <option value="405">405</option>
+          <option value="407">407</option>
+          <option value="408">408</option>
+          <option value="409">409</option>
+          <option value="410">410</option>
+          <option value="411">411</option>
+		</select>
 
-    function onchange() {
-    <?php foreach ($sports_arr as $sa) {?>
-        if (s1.value == '<?php echo $sa; ?>') {
-            option_html = "";
-            <?php if (isset($position[$sa])) { ?> // Make sure position is exist
-                <?php foreach ($position[$sa] as $value) { ?>
-                    option_html += "<option><?php echo $value; ?></option>";
-                <?php } ?>
-            <?php } ?>
-            s2.innerHTML = option_html;
-        }
-    <?php } ?>
-}
-</script>
 
 	
 		<input type="submit" value="Submit">
@@ -576,6 +463,3 @@ function test_input($data) {
 
 </body>
 </html>
-
-<?php
-  
