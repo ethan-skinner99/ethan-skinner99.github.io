@@ -1,5 +1,11 @@
+<!-- to do list
+Center Rocket richard and jean in cards  
+Add nav bar to the footer ( improve footer)
+
+-->
+
 <html>
-<title>Goals Inc</title> <!-- title, displayed in tab-->
+<title>Math Tutoring</title> <!-- title, displayed in tab-->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,154 +18,169 @@
 
 <style>
 	h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+
 	body{font-family: "Lato", sans-serif; font-size: 14px;}
 .w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.bgimg {
+  min-height: 60%;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg {background-image: url("pics/circle_trig.png")}
+
 </style>
 <body>
-
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
 	<div class="w3-bar w3-white w3-wide w3-padding w3-card">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large" 
 		href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a> 
-  <a href=".\index.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Goals</a>
+  <a href=".\index.html" class="w3-bar-item w3-button "><i class="fa fa-home w3-margin-right"></i>Math Tutoring</a>
 	  <!-- Float links to the right. Hide them on small screens -->
 	  <div class="w3-right w3-hide-small">
 		
-		<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals</a>
-
-		<div class="w3-dropdown-hover">		
-			<a class="w3-button" style="border-left: 2px solid black;">  Products <i class="fa fa-caret-down"> </i> </a>     
-			<div class="w3-dropdown-content w3-bar-block">
-				<a href=".\rocket.html" class="w3-bar-item w3-button ">The Rocket Richard</a>
-				<a href=".\jean_beliveau.html" class="w3-bar-item w3-button ">Jean Beliveau</a>
-			</div>	
-    </div>	
-    <a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
-		<a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
-		<a href=".\shipping.html" class="w3-bar-item w3-button  ">Shipping</a>
-		<a href=".\premium.html" class="w3-bar-item w3-button ">Premium Incentive</a>
-		<a href=".\updates.html" class=" w3-button w3-bar-item " >Updates</a>
-
+		<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Us</a>
+	<a href=".\services.html" class="w3-bar-item w3-button ">Services & Pricing</a>
+	<a href=".\contact_me.html"	class="w3-bar-item w3-button ">Contact Us</a>
+    
+	<a href=".\updates.html" class ="w3-bar-item w3-button ">Updates</a>
 	  </div>
 	</div>
   </div>
 
 
   <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
-  <div id="navDemo" class="small-bar w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-    <a href=".\photo_gallery.html" class="w3-bar-item w3-button ">Photo Gallery</a>
-    <a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Goals Inc</a>
-    <a href=".\rocket.html" class="w3-bar-item w3-button ">The Rocket Richard</a>
-    <a href=".\jean_beliveau.html" class="w3-bar-item w3-button  ">Jean Beliveau</a>
-    <a href=".\price.html"  class="w3-bar-item w3-button ">Pricing</a>
-    <a href=".\shipping.html" class="w3-bar-item w3-button ">Shipping</a>
-    <a href=".\premium.html" class="w3-bar-item w3-button">Premium Incentive</a>
-    <a href=".\updates.html" class=" w3-button w3-bar-item" >Updates</a>
-  </div>
+<div id="navDemo" class="small-bar w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+	<a href=".\About_the_Artists.html" class="w3-bar-item w3-button ">About Us</a>
+	<a href=".\services.html" class="w3-bar-item w3-button ">Services & Pricing</a>
+	<a href=".\contact_me.html"	class="w3-bar-item w3-button ">Contact Us</a>
+	
+	<a href=".\updates.html"  class="w3-bar-item w3-button ">updates</a>
+</div>
 
-  
-<header class="w3-container w3-padding-16" style="margin-top: 7%;">
- 
-  <div class="w3-center" style="font-size: 60pt;">
-  <h1> <b><u>About Goals</u></b></h1>
- 
-    <div class="w3-padding-16">
-    </div>
-  </div>
-  <h3 class="center">Commemorative Goals is dedicated to bringing you, the collector and investor, 
-    the highest quality limited edition fine art reproductions personally signed by the artist and athlete.
-  </h3>
+
+<!-- Header -->
+
+  <header class="w3-display-container w3-wide bgimg" id="home">
+	
+	<div class="w3-display-middle w3-center" style="margin-top: 8%;">
+		
+
+	  
+	</div>
 </header>
-  
 
 
-<div class="w3-content">
-<div class="container w3-padding-large w3-hide-small">
-  <img src=".\pics\rocket_bw.jpg" class="w3-round w3-center w3-image w3-opacity-min" alt="Table Setting" width="70%">
-</div>
-
-
-<hr id="about">
 <!-- Page content -->
-<div class="w3-content" >
+<div class="w3-content">
 
-    <!-- About Section -->
-    <div class="w3-row w3-padding-64" id="about">
-      <div class="w3-col m6 w3-padding-large w3-hide-small">
-       <img src=".\pics\Sample_artist.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
-      </div>
-  
-      <div class="w3-col m6 w3-padding-large">
-        <h1 class="w3-center"><u><b>About the Artist</b></u></h1><br>
-        <h5 class="w3-center"> <i>Richard John Carter</i> </h5>
-        <p class="w3-large">After establishing himself as a top commercial illustrator 
-          Richard is now able to devote more of his time and considerable talent to fine art. 
-          The commission to paint “Rocket Richard” was the perfect opportunity to combine his two great loves, hockey and art.
-          </p>
-        
-      </div>
-    </div>
+	<!-- INformation Section -->
+<div class="w3-row-padding w3-padding-32 w3-container">
+	<div class="w3-content">
+    <h1>About Us</h1>
+		<h5 class="w3-padding-32">
+			Rye High Academy lead by Master graduate students Ethan and Kenji was founded to enrich the current math currlimum. Sessions are desgined to be one-on-one focusing on the specfic needs for the student. From building upon
+			elemtery math skill to undergrade university mathematics courses we offer a wide range of skill sets.
+			 Our goal is to help students reach their true potential and develop enthusiasm towards learning. 
+			We believe that every student is capable of excelling in math whether they believe it or not. 
+			We promise to help your confidence grow in order to reach your academic goals. <br>
+			Rye High Academy, we provide one on one for high school mathematics(Grade 9-12), Calculus (grade 12) and university Calculus I, calculus II, 
+			Differential Equations, Probability and Statistics I, and Discrete Mathematics taught at all Ontario universities.
+		</h5>
 
-
-    <hr id="about">
- <!-- About Section -->
- <div class="w3-container w3-padding-32 w3-center">  
-  <h1><u><b>About Commemorative Goals</b></u></h1>
-  <div class="w3-padding-32">
-    <h4><b>High quality Litographs signed and certifed</b></h4>
-    <h6><i>Commemorative Goals has a passion for hockey and memorabilia collection. </i></h6>
- 
-  </div>
-  <img src=".\pics\jean_signing.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800" height="533">
-  <h5>Mr. Beliveau signing the orginal art.</h5>
-
+	  
+	</div>
 </div>
 
 </div>
 
 
+	
+
+<!-- Cards -->
+<hr></hr>
+<div class="w3-white">    
+	  <h1 class="w3-wide w3-center">Current Tutoring Options</h1>		
 </div>
 
 
+		
+<div class="centered">
+	<div class="cards w3-padding-32">
+
+		<!-- Card 1 -->
+		<div class="card w3-card w3-padding-16" >
+			<h3 class="w3-center">Zoom One-On-One</h3>   
+			<h5 class="w3-padding-64 w3-center" style="width:auto;">
+				Tutoring will be conducted with ZOOM during the COVID panademic. Tools such as a tablet with stylus will be used
+				<ul>
+					<li>Prepared worksheets will be given for pratice outside of tutoring hours and review upon the next session</li>
+					<li>Classroom problems can be worked on</li>
+					<li>Upcoming term test prepareation</li>
+				  </ul>				
+				
+			</h5>
+		</div>
+
+
+			<!-- Card 2 Jean Beliveau-->
+
+		<div class="card w3-card w3-padding-16" >
+		<h3 class="w3-center">In-person tutoring</h3>
+
+		<h5 class="w3-padding-64 w3-center" style="width:auto;">
+			Once the teachers have been vaccined we will conduct inperson tutoring either at the indulvials house or ours. 
+			<ul>
+        <li>Prepared worksheets will be given for pratice outside of tutoring hours and review upon the next session</li>
+        <li>Classroom problems can be worked on</li>
+        <li>Upcoming term test prepareation</li>
+			  </ul>				
+			
+		</h5>
+	</div>
+</div>
 
 
 
 <!-- Footer -->
-<footer class="w3-container w3-black w3-padding-16">
+<footer class="w3-container w3-Purple w3-padding-16">
 	
   <div class = "w3-container">
-    <div class="w3-bar w3-black w3-wide w3-padding-16 w3-card">
+    <div class="w3-bar w3-wide w3-padding-16">
       
         <div class="w3-left w3-hide-small">
-        <a href="#about" class="w3-bar-item-foot w3-button ">Pricing</a>  
-        <a href="#about" class="w3-bar-item-foot w3-button ">FAQ</a>
-        <a href="#about" class="w3-bar-item-foot w3-button ">Contact Us</a>
-  
+        <a href=".\services.html" class="w3-bar-item-foot w3-button ">Pricing</a>  
+        <a href=".\faq.html" class="w3-bar-item-foot w3-button ">FAQ</a>
+        <a href=".\contact_me.html" class="w3-bar-item-foot w3-button ">Contact Us</a>
     </div>
   </div>	
 
 
-<p >  <br> &copy; Copyright 2020 Commemorative Goals </p>
+<p >  <br> &copy; Copyright 2020 Two Tutors academics </p>
 
 </footer>
 
 <!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
 <script>
-
 // Used to toggle the menu on small screens when clicking on the menu button
+
 function myFunction() {
   var x = document.getElementById("navDemo");
-  if (x.className.indexOf("w3-show") == -1) {
+  if (x.className.indexOf(" w3-show") == -1) {
     x.className += " w3-show";
   } else { 
     x.className = x.className.replace(" w3-show", "");
   }
 }
 
-
-
+// function for drawing lines for dimentions 
+function draw() {
+  var canvas = document.getElementById('canvas');
+  if (canvas.getContext) {
+    var ctx = canvas.getContext('2d');
+  }
+}
 </script>
 
 </body>
