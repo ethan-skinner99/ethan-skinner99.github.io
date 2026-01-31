@@ -1,128 +1,315 @@
 /* ============================================
-   Commemorative Goals - Modern CSS Enhancements
+   Commemorative Goals - Premium Luxury Theme
+   High-End Collectibles Shopping Experience
    ============================================ */
 
-/* CSS Custom Properties (Variables) */
+/* Import Elegant Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* CSS Custom Properties - Luxury Color Palette */
 :root {
-    --primary-color: #1a1a2e;
-    --secondary-color: #16213e;
-    --accent-color: #e94560;
-    --gold-color: #d4af37;
-    --text-dark: #333333;
-    --text-light: #ffffff;
-    --transition-speed: 0.3s;
-    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
-    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
-    --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+    /* Primary Colors - Deep, Rich Tones */
+    --primary-color: #0d0d0d;
+    --secondary-color: #1a1a1a;
+    --tertiary-color: #2d2d2d;
+    
+    /* Gold & Metallic Accents */
+    --gold-primary: #c9a962;
+    --gold-light: #e5d4a1;
+    --gold-dark: #a38b4a;
+    --gold-gradient: linear-gradient(135deg, #c9a962 0%, #e5d4a1 50%, #c9a962 100%);
+    
+    /* Accent Colors */
+    --accent-burgundy: #722f37;
+    --accent-navy: #0a1628;
+    --accent-cream: #f5f0e6;
+    --accent-silver: #c0c0c0;
+    
+    /* Text Colors */
+    --text-dark: #1a1a1a;
+    --text-medium: #4a4a4a;
+    --text-light: #f8f8f8;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    
+    /* Premium Shadows */
+    --shadow-subtle: 0 2px 15px rgba(0, 0, 0, 0.08);
+    --shadow-elegant: 0 10px 40px rgba(0, 0, 0, 0.12);
+    --shadow-dramatic: 0 20px 60px rgba(0, 0, 0, 0.25);
+    --shadow-gold: 0 5px 30px rgba(201, 169, 98, 0.3);
+    
+    /* Transitions */
+    --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-elegant: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    
+    /* Spacing */
+    --section-padding: 80px;
+    --card-padding: 32px;
 }
 
 /* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
+    font-size: 16px;
 }
 
-/* Base Body Improvements */
+/* Base Body - Luxury Typography */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
     color: var(--text-dark);
+    background-color: var(--accent-cream);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Modern Navigation Enhancements */
+/* Elegant Headings */
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Premium Navigation */
 .w3-top .w3-bar {
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95) !important;
-    transition: all var(--transition-speed) ease;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.98) !important;
+    border-bottom: 1px solid rgba(201, 169, 98, 0.2);
+    transition: all var(--transition-smooth);
+    padding: 5px 0;
+}
+
+.w3-top .w3-bar.scrolled {
+    box-shadow: var(--shadow-elegant);
+}
+
+.w3-bar-item.w3-button {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 20px !important;
+    position: relative;
+}
+
+.w3-bar-item.w3-button::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--gold-gradient);
+    transition: all var(--transition-smooth);
+    transform: translateX(-50%);
+}
+
+.w3-bar-item.w3-button:hover::after {
+    width: 60%;
 }
 
 .w3-bar-item.w3-button:hover,
 .w3-dropdown-hover:hover > .w3-button {
-    background-color: rgba(233, 69, 96, 0.1) !important;
-    color: var(--accent-color) !important;
-    transition: all var(--transition-speed) ease;
+    background-color: transparent !important;
+    color: var(--gold-dark) !important;
+    transition: all var(--transition-smooth);
+}
+
+/* Fixed Dropdown - z-index fix */
+.w3-dropdown-hover {
+    position: relative;
+    z-index: 1000;
 }
 
 .w3-dropdown-content {
-    box-shadow: var(--shadow-medium);
-    border-radius: 8px;
+    box-shadow: var(--shadow-elegant);
+    border-radius: 0;
     overflow: hidden;
+    border: 1px solid rgba(201, 169, 98, 0.15);
+    background: rgba(255, 255, 255, 0.99) !important;
+    min-width: 200px;
+    z-index: 1001 !important;
+}
+
+.w3-dropdown-content .w3-bar-item.w3-button {
+    font-size: 12px;
+    padding: 15px 24px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.w3-dropdown-content .w3-bar-item.w3-button::after {
+    display: none;
 }
 
 .w3-dropdown-content .w3-bar-item.w3-button:hover {
-    background-color: var(--accent-color) !important;
-    color: white !important;
+    background: var(--gold-gradient) !important;
+    color: var(--primary-color) !important;
 }
 
-/* Hero/Header Section */
+/* Hero/Header Section - Dramatic Presentation */
 header.w3-display-container {
     position: relative;
     overflow: hidden;
 }
 
-header.w3-display-container::after {
+header.w3-display-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 0%, rgba(22, 33, 62, 0.5) 100%);
+    background: linear-gradient(
+        180deg, 
+        rgba(13, 13, 13, 0.4) 0%, 
+        rgba(13, 13, 13, 0.2) 40%,
+        rgba(13, 13, 13, 0.6) 100%
+    );
     pointer-events: none;
-}
-
-header .w3-display-middle {
     z-index: 1;
 }
 
-/* Card Improvements */
+header.w3-display-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    background: linear-gradient(to top, var(--accent-cream), transparent);
+    pointer-events: none;
+    z-index: 1;
+}
+
+header .w3-display-middle,
+header .w3-display-bottomleft {
+    z-index: 2;
+}
+
+header .w3-display-middle h1,
+header .w3-display-bottomleft h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Premium Product Cards */
 .w3-card, .w3-card-2, .w3-card-4 {
-    border-radius: 12px;
+    border-radius: 0;
     overflow: hidden;
-    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-elegant);
+    position: relative;
+}
+
+.w3-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gold-gradient);
+    transform: scaleX(0);
+    transition: transform var(--transition-smooth);
 }
 
 .w3-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-heavy);
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-dramatic);
 }
 
-/* Image Hover Effects */
+.w3-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Luxury Image Treatment */
 .w3-card img,
 .image-fade {
-    transition: transform var(--transition-speed) ease;
+    transition: all var(--transition-elegant);
+    filter: saturate(1.05);
 }
 
 .w3-card:hover img,
 .container-fade:hover .image-fade {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: saturate(1.1) brightness(1.02);
 }
 
-/* Modern Button Styles */
+/* Premium Button Styles */
 .w3-button, .w3-btn {
-    border-radius: 6px;
-    transition: all var(--transition-speed) ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 14px 32px !important;
+    transition: all var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
 }
 
-.w3-button:hover, .w3-btn:hover {
-    transform: translateY(-2px);
+.w3-button.w3-black,
+.w3-btn.w3-black {
+    background: var(--primary-color) !important;
+    border: 2px solid var(--primary-color);
 }
 
-/* Fade Container for Price Cards */
+.w3-button.w3-black:hover,
+.w3-btn.w3-black:hover {
+    background: transparent !important;
+    color: var(--primary-color) !important;
+    transform: none;
+}
+
+/* Gold Accent Button */
+.btn-gold {
+    background: var(--gold-gradient) !important;
+    color: var(--primary-color) !important;
+    border: none;
+    box-shadow: var(--shadow-gold);
+}
+
+.btn-gold:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 40px rgba(201, 169, 98, 0.4);
+}
+
+/* Fade Container - Luxury Overlay */
 .container-fade {
     position: relative;
     overflow: hidden;
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .container-fade .middle-fade {
-    transition: opacity var(--transition-speed) ease;
+    transition: all var(--transition-elegant);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(13, 13, 13, 0.85) 100%
+    );
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 40px;
     opacity: 0;
-    text-align: center;
 }
 
 .container-fade:hover .middle-fade {
@@ -130,34 +317,42 @@ header .w3-display-middle {
 }
 
 .container-fade:hover .image-fade {
-    filter: brightness(0.7);
+    filter: brightness(0.9) saturate(1.1);
 }
 
 .container-fade .text {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 12px 24px;
-    border-radius: 6px;
+    background: var(--gold-gradient);
+    color: var(--primary-color);
+    padding: 16px 40px;
     text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
     font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
     display: inline-block;
-    transition: all var(--transition-speed) ease;
+    transition: all var(--transition-smooth);
+    border: none;
 }
 
 .container-fade .text:hover {
-    background-color: var(--gold-color);
-    transform: scale(1.05);
+    background: #ffffff;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-elegant);
 }
 
-/* Section Headings */
+/* Luxury Section Headings */
 h1, h2, h3 {
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    color: var(--primary-color);
 }
 
 h1.w3-border-bottom {
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
+    border: none !important;
 }
 
 h1.w3-border-bottom::after {
@@ -165,88 +360,182 @@ h1.w3-border-bottom::after {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), var(--gold-color));
-    border-radius: 2px;
+    width: 80px;
+    height: 2px;
+    background: var(--gold-gradient);
 }
 
-/* Products Grid */
+/* Centered heading decoration */
+.w3-center h1.w3-border-bottom::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Price Display - Premium Styling */
+.w3-card h1.w3-center {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--gold-dark);
+    position: relative;
+    display: inline-block;
+}
+
+.w3-card h1.w3-center::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    width: 20px;
+    height: 1px;
+    background: var(--gold-primary);
+}
+
+.w3-card h1.w3-center::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 20px;
+    height: 1px;
+    background: var(--gold-primary);
+}
+
+/* Products Grid - Luxury Layout */
 .container {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 40px;
     justify-content: center;
+    padding: 40px 0;
 }
 
-/* Footer Modernization */
+/* Premium Footer */
 footer.w3-black {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    background: var(--primary-color) !important;
+    border-top: 1px solid rgba(201, 169, 98, 0.3);
+    position: relative;
+}
+
+footer.w3-black::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--gold-gradient);
 }
 
 footer .w3-bar-item-foot {
-    color: rgba(255, 255, 255, 0.7);
-    transition: color var(--transition-speed) ease;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color var(--transition-smooth);
 }
 
 footer .w3-bar-item-foot:hover {
-    color: var(--gold-color);
+    color: var(--gold-primary);
 }
 
-/* Photo Gallery Enhancements */
+/* Copyright Text */
+footer p {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Photo Gallery - Gallery Style */
 .w3-row-padding .w3-half img {
-    border-radius: 12px;
-    box-shadow: var(--shadow-light);
-    transition: all var(--transition-speed) ease;
+    box-shadow: var(--shadow-subtle);
+    transition: all var(--transition-elegant);
+    border: 8px solid #ffffff;
 }
 
 .w3-row-padding .w3-half img:hover {
-    box-shadow: var(--shadow-heavy);
+    box-shadow: var(--shadow-dramatic);
     transform: scale(1.02);
 }
 
-/* Pricing Cards */
-.w3-card h1.w3-center {
-    color: var(--accent-color);
-    font-size: 2.5rem;
+/* PSA Authentication Badge - Luxury Style */
+.w3-tag.w3-light-grey {
+    background: var(--gold-gradient) !important;
+    color: var(--primary-color) !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    border-radius: 0;
 }
 
-/* Responsive Improvements */
+/* Premium Responsive Design */
+@media (max-width: 992px) {
+    :root {
+        --section-padding: 60px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
         align-items: center;
+        gap: 30px;
     }
     
     .w3-card[style*="max-width"] {
-        max-width: 90% !important;
-        margin-bottom: 20px;
+        max-width: 100% !important;
+        margin-bottom: 0;
     }
     
     h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+    
+    h1.w3-border-bottom::after {
+        width: 60px;
     }
     
     .w3-padding-64 {
-        padding: 32px 16px !important;
+        padding: 48px 20px !important;
+    }
+    
+    .w3-bar-item.w3-button {
+        font-size: 11px;
+        padding: 15px 16px !important;
     }
 }
 
 @media (max-width: 480px) {
     .w3-display-middle h1 {
         font-size: 1.5rem;
+        letter-spacing: 0.05em;
     }
     
     .w3-xxlarge {
-        font-size: 1.2rem !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .w3-card h1.w3-center {
+        font-size: 2.5rem;
+    }
+    
+    .container-fade .text {
+        padding: 12px 24px;
+        font-size: 11px;
     }
 }
 
-/* Animation Keyframes */
-@keyframes fadeIn {
+/* Elegant Animation Keyframes */
+@keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -254,10 +543,20 @@ footer .w3-bar-item-foot:hover {
     }
 }
 
-@keyframes slideIn {
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes slideInLeft {
     from {
         opacity: 0;
-        transform: translateX(-30px);
+        transform: translateX(-40px);
     }
     to {
         opacity: 1;
@@ -267,26 +566,52 @@ footer .w3-bar-item-foot:hover {
 
 /* Apply animations to sections */
 .w3-content > div {
-    animation: fadeIn 0.6s ease-out;
+    animation: fadeInUp 0.8s ease-out;
 }
+
+/* Staggered animation for cards */
+.w3-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.container .w3-card:nth-child(1) { animation-delay: 0.1s; }
+.container .w3-card:nth-child(2) { animation-delay: 0.2s; }
+.container .w3-card:nth-child(3) { animation-delay: 0.3s; }
+.container .w3-card:nth-child(4) { animation-delay: 0.4s; }
 
 /* PSA Tag Styling */
-.w3-tag.w3-light-grey {
-    background-color: var(--gold-color) !important;
-    color: var(--primary-color) !important;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 4px;
+.psa-badge {
+    display: inline-block;
+    background: var(--gold-gradient);
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    position: relative;
 }
 
-/* Links */
+/* Links - Luxury Style */
 a {
-    color: var(--accent-color);
-    transition: color var(--transition-speed) ease;
+    color: var(--gold-dark);
+    text-decoration: none;
+    transition: color var(--transition-smooth);
+    position: relative;
 }
 
 a:hover {
-    color: var(--gold-color);
+    color: var(--primary-color);
+}
+
+/* Inline link underline effect */
+p a, li a {
+    border-bottom: 1px solid rgba(201, 169, 98, 0.4);
+}
+
+p a:hover, li a:hover {
+    border-bottom-color: var(--primary-color);
 }
 
 /* Center utility */
@@ -296,23 +621,46 @@ a:hover {
     margin-right: auto;
 }
 
-/* Mobile Navigation Improvements */
+/* Mobile Navigation - Luxury Style */
 #navDemo {
-    box-shadow: var(--shadow-medium);
-    border-radius: 0 0 12px 12px;
+    background: rgba(255, 255, 255, 0.99) !important;
+    box-shadow: var(--shadow-elegant);
+    border-top: 1px solid rgba(201, 169, 98, 0.2);
 }
 
 #navDemo .w3-bar-item.w3-button {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    font-size: 12px;
+}
+
+#navDemo .w3-bar-item.w3-button::after {
+    display: none;
 }
 
 #navDemo .w3-bar-item.w3-button:last-child {
     border-bottom: none;
 }
 
-/* Loading Animation for Images */
+/* Luxury Image Loading */
 img {
-    background-color: #f5f5f5;
+    background: linear-gradient(
+        90deg,
+        var(--accent-cream) 0%,
+        #ffffff 50%,
+        var(--accent-cream) 100%
+    );
+    background-size: 200% 100%;
+}
+
+/* Selection Color */
+::selection {
+    background: var(--gold-light);
+    color: var(--primary-color);
+}
+
+::-moz-selection {
+    background: var(--gold-light);
+    color: var(--primary-color);
 }
 
 /* Print Styles */
@@ -323,36 +671,288 @@ img {
     
     body {
         font-size: 12pt;
+        background: white;
     }
     
     a[href]:after {
         content: " (" attr(href) ")";
     }
+    
+    .w3-card {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
 }
 
 /* Accessibility Improvements */
 :focus {
-    outline: 2px solid var(--accent-color);
-    outline-offset: 2px;
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 3px;
 }
 
 .w3-button:focus,
 .w3-bar-item:focus {
-    outline: 2px solid var(--accent-color);
+    outline: 2px solid var(--gold-primary);
     outline-offset: -2px;
 }
 
 /* Skip to content link for accessibility */
 .skip-link {
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: 0;
-    background: var(--accent-color);
-    color: white;
-    padding: 8px;
-    z-index: 100;
+    background: var(--gold-gradient);
+    color: var(--primary-color);
+    padding: 12px 24px;
+    z-index: 9999;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
 }
 
 .skip-link:focus {
     top: 0;
+}
+
+/* ============================================
+   Luxury Utility Classes
+   ============================================ */
+
+/* Gold Text */
+.text-gold {
+    color: var(--gold-primary) !important;
+}
+
+/* Gold Background */
+.bg-gold {
+    background: var(--gold-gradient) !important;
+}
+
+/* Luxury Container */
+.luxury-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Divider */
+.luxury-divider {
+    width: 80px;
+    height: 2px;
+    background: var(--gold-gradient);
+    margin: 30px auto;
+}
+
+/* Luxury Section */
+.luxury-section {
+    padding: var(--section-padding) 0;
+    position: relative;
+}
+
+/* Testimonial/Quote Style */
+.luxury-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-medium);
+    line-height: 1.8;
+    position: relative;
+    padding: 40px;
+}
+
+.luxury-quote::before {
+    content: '"';
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 6rem;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    color: var(--gold-light);
+    line-height: 1;
+}
+
+/* Premium Badge */
+.premium-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--primary-color);
+    color: var(--gold-light);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 10px 20px;
+}
+
+.premium-badge::before {
+    content: '★';
+    color: var(--gold-primary);
+}
+
+/* Luxury List Style */
+.luxury-list {
+    list-style: none;
+    padding: 0;
+}
+
+.luxury-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.luxury-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 2px;
+    background: var(--gold-primary);
+}
+
+/* Feature Highlight Box */
+.feature-box {
+    background: #ffffff;
+    border: 1px solid rgba(201, 169, 98, 0.3);
+    padding: 40px;
+    text-align: center;
+    transition: all var(--transition-smooth);
+}
+
+.feature-box:hover {
+    border-color: var(--gold-primary);
+    box-shadow: var(--shadow-gold);
+}
+
+.feature-box i {
+    font-size: 2.5rem;
+    color: var(--gold-primary);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* ============================================
+   W3.CSS Overrides for Premium Look
+   ============================================ */
+
+.w3-white {
+    background-color: #ffffff !important;
+}
+
+.w3-light-grey {
+    background-color: var(--accent-cream) !important;
+}
+
+.w3-grey {
+    background-color: #e8e4dc !important;
+}
+
+.w3-text-grey {
+    color: var(--text-medium) !important;
+}
+
+.w3-border {
+    border-color: rgba(201, 169, 98, 0.2) !important;
+}
+
+/* Premium Padding Classes */
+.w3-padding-32 {
+    padding: 40px 24px !important;
+}
+
+.w3-padding-48 {
+    padding: 60px 24px !important;
+}
+
+.w3-padding-64 {
+    padding: var(--section-padding) 24px !important;
+}
+
+/* Container Max Width */
+.w3-content {
+    max-width: 1200px;
+}
+
+/* Blurb/Info Box Override */
+.w3-panel {
+    border-left: 3px solid var(--gold-primary) !important;
+    background: rgba(201, 169, 98, 0.08) !important;
+    border-radius: 0;
+}
+
+/* Table Styling */
+table.w3-table, table.w3-table-all {
+    border-collapse: collapse;
+}
+
+table.w3-table th,
+table.w3-table-all th {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--primary-color) !important;
+    color: var(--text-light) !important;
+    padding: 16px !important;
+}
+
+table.w3-table td,
+table.w3-table-all td {
+    padding: 14px 16px !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+table.w3-striped tr:nth-child(even) {
+    background: rgba(201, 169, 98, 0.05) !important;
+}
+
+/* Form Elements */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    border-radius: 0 !important;
+    padding: 14px 16px !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 14px !important;
+    transition: all var(--transition-smooth);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--gold-primary) !important;
+    box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.15);
+    outline: none;
+}
+
+/* Scrollbar Styling (WebKit) */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--accent-cream);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gold-primary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-dark);
 }
