@@ -1,0 +1,358 @@
+/* ============================================
+   Commemorative Goals - Modern CSS Enhancements
+   ============================================ */
+
+/* CSS Custom Properties (Variables) */
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --accent-color: #e94560;
+    --gold-color: #d4af37;
+    --text-dark: #333333;
+    --text-light: #ffffff;
+    --transition-speed: 0.3s;
+    --shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-heavy: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base Body Improvements */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* Modern Navigation Enhancements */
+.w3-top .w3-bar {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95) !important;
+    transition: all var(--transition-speed) ease;
+}
+
+.w3-bar-item.w3-button:hover,
+.w3-dropdown-hover:hover > .w3-button {
+    background-color: rgba(233, 69, 96, 0.1) !important;
+    color: var(--accent-color) !important;
+    transition: all var(--transition-speed) ease;
+}
+
+.w3-dropdown-content {
+    box-shadow: var(--shadow-medium);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.w3-dropdown-content .w3-bar-item.w3-button:hover {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+/* Hero/Header Section */
+header.w3-display-container {
+    position: relative;
+    overflow: hidden;
+}
+
+header.w3-display-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.7) 0%, rgba(22, 33, 62, 0.5) 100%);
+    pointer-events: none;
+}
+
+header .w3-display-middle {
+    z-index: 1;
+}
+
+/* Card Improvements */
+.w3-card, .w3-card-2, .w3-card-4 {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.w3-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Image Hover Effects */
+.w3-card img,
+.image-fade {
+    transition: transform var(--transition-speed) ease;
+}
+
+.w3-card:hover img,
+.container-fade:hover .image-fade {
+    transform: scale(1.05);
+}
+
+/* Modern Button Styles */
+.w3-button, .w3-btn {
+    border-radius: 6px;
+    transition: all var(--transition-speed) ease;
+}
+
+.w3-button:hover, .w3-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Fade Container for Price Cards */
+.container-fade {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.container-fade .middle-fade {
+    transition: opacity var(--transition-speed) ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    text-align: center;
+}
+
+.container-fade:hover .middle-fade {
+    opacity: 1;
+}
+
+.container-fade:hover .image-fade {
+    filter: brightness(0.7);
+}
+
+.container-fade .text {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    transition: all var(--transition-speed) ease;
+}
+
+.container-fade .text:hover {
+    background-color: var(--gold-color);
+    transform: scale(1.05);
+}
+
+/* Section Headings */
+h1, h2, h3 {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+h1.w3-border-bottom {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+h1.w3-border-bottom::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--gold-color));
+    border-radius: 2px;
+}
+
+/* Products Grid */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Footer Modernization */
+footer.w3-black {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+}
+
+footer .w3-bar-item-foot {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color var(--transition-speed) ease;
+}
+
+footer .w3-bar-item-foot:hover {
+    color: var(--gold-color);
+}
+
+/* Photo Gallery Enhancements */
+.w3-row-padding .w3-half img {
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    transition: all var(--transition-speed) ease;
+}
+
+.w3-row-padding .w3-half img:hover {
+    box-shadow: var(--shadow-heavy);
+    transform: scale(1.02);
+}
+
+/* Pricing Cards */
+.w3-card h1.w3-center {
+    color: var(--accent-color);
+    font-size: 2.5rem;
+}
+
+/* Responsive Improvements */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .w3-card[style*="max-width"] {
+        max-width: 90% !important;
+        margin-bottom: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .w3-padding-64 {
+        padding: 32px 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .w3-display-middle h1 {
+        font-size: 1.5rem;
+    }
+    
+    .w3-xxlarge {
+        font-size: 1.2rem !important;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations to sections */
+.w3-content > div {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* PSA Tag Styling */
+.w3-tag.w3-light-grey {
+    background-color: var(--gold-color) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* Links */
+a {
+    color: var(--accent-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--gold-color);
+}
+
+/* Center utility */
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Mobile Navigation Improvements */
+#navDemo {
+    box-shadow: var(--shadow-medium);
+    border-radius: 0 0 12px 12px;
+}
+
+#navDemo .w3-bar-item.w3-button {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+#navDemo .w3-bar-item.w3-button:last-child {
+    border-bottom: none;
+}
+
+/* Loading Animation for Images */
+img {
+    background-color: #f5f5f5;
+}
+
+/* Print Styles */
+@media print {
+    .w3-top, footer, #navDemo {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+}
+
+/* Accessibility Improvements */
+:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.w3-button:focus,
+.w3-bar-item:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: -2px;
+}
+
+/* Skip to content link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+
+.skip-link:focus {
+    top: 0;
+}
